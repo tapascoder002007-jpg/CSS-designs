@@ -1,144 +1,96 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-html{
-    box-sizing: border-box;
-    font-family:'Open Sans', sans-serif;
-}
-body {
-    background-color: #60a9ff;
+body{
+    margin:0;
+    height: 100vh;
+    background-color: #141414;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-
+    transform: scale(calc(min(100vw / 1440, 100vh / 900)));
+    transform-origin: center;
 }
-.panel{
-    background-color: white;
-    border-radius: 10px;
-    padding: 15px 25px;
-    width: 100%;
-    max-width: 960px;
+.pdiv{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.align{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: grey;
+    font-weight: 300;
+    font-family: "Moderustic", sans-serif;
+    margin-bottom: 90px;
+}
+#Guest,#Nams,#Children,#addprofiles{
+    width: 125px;
+    height: 125px;
+    margin: 0.5rem;
     text-align: center;
-    text-transform: uppercase;
-}
-.pricing-plan{
-    border-bottom: 1px solid rgb(242, 241, 241);
-}
-.pricing-plan:last-child{
-    border-bottom: none;
-}
-.pricing-img{
-    margin-bottom: 25px;
-    max-width: 100%;
-}
-
-.pricing-header{
-    color: #888;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-.pricing-features{
-    margin: 50px 0 25px;
-    color: #016ff9;
-}
-.pricing-features-item{
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 12px;
-    line-height: 1.5;
-    padding: 15px 0;
-    border-top: 1px solid rgb(242, 241, 241);
-}
-.pricing-features-item:last-child{
-    border-bottom:1px solid rgb(242, 241, 241);
-}
-.pricing-price{
-    color: #016ff9;
-    display: block;
-    font-size: 32px;
-    font-weight: 700;
-}
-.pricing-button{
-    border: 1px solid #9dd1ff;
-    border-radius: 10px;
-    color: #348efe;
-    display: inline-block;
-    padding: 15px 35px;
-    text-decoration: none;
-    margin: 25px 0;
-    transition: background-color 200ms ease-in-out;
-}
-.pricing-button:hover , .pricing-button:focus{
-    background-color:#e1f1ff ;
     cursor: pointer;
+    transition: 0.05s ease-in-out;
+    border-radius: 4px;
 }
-.pricing-button.is-featured{
-    background-color: #48aaff;
+#Guest:hover #guest_img,#Nams:hover #nams_img,#Children:hover #children_img{
+    border-color: white;
+}
+#Guest:hover p,#Nams:hover p,#Children:hover p, #addprofiles:hover p{
     color: white;
 }
-.pricing-button.is-featured:hover, .pricing-button.is-featured:focus{
-    background-color: #269aff;
-    color: white;
+#addprofiles:hover{
+    background-color: white;
 }
-@media (min-width: 900px){
-    .panel{
-        flex-direction: row;
-    }
-    .pricing-plan{
-        border-bottom:none;
-        border-right: 1px solid rgb(242, 241, 241);
-        padding: 25px 50px;
-    }
-    .pricing-plan:last-child{
-        border-right: none;
-    }
+#nams_img,#guest_img,#children_img,#add_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    margin-bottom: -5px;
+    box-sizing: border-box;
+    border: 0.15em solid transparent;
 }
 
+#title{
+    color: white;
+    font-family: "Moderustic", sans-serif;
+    font-weight: 350;
+    font-size: 43px;
+    margin-bottom : 15px;
+}
+#manage{
+    background-color: transparent;
+    border: 0.1em solid grey;
+    color: grey;
+    cursor: pointer;
+    letter-spacing:  2px;
+    font-family: "Moderustic", sans-serif;
+    font-weight: 300;
+    padding: 0.5em 1.5em;
+    font-size: 15px;
+    display: block;
+    transition: 0.05s ease-in-out;
+}
+#manage:hover{
+    color: white;
+    border-color: white;
+}
+#title{
+    font-size: clamp(30px,4vw,60px);
+}
+#Guest,#Nams,#Children,#addprofiles{
+    width: clamp(80px,9vw,200px);
+    height: clamp(80px,9vw,200px);
+}
+
+.align p{
+    font-size: clamp(12px,1vw,18px);
+}
+
+#manage{
+    font-size: clamp(12px,1vw,16px);
+}
